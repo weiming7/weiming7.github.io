@@ -1,44 +1,44 @@
 // JavaScript Document
 function id(obj) {
-    return document.getElementById(obj);
+	return document.getElementById(obj);
 }
-function bind(obj, ev, fn) { 
-    if (obj.addEventListener) {
-        obj.addEventListener(ev, fn, false);
-    } else {
-        obj.attachEvent('on' + ev, function() {
-            fn.call(obj);
-        });
-    }
+function bind(obj, ev, fn) {
+	if (obj.addEventListener) {
+		obj.addEventListener(ev, fn, false);
+	} else {
+		obj.attachEvent('on' + ev, function() {
+			fn.call(obj);
+		});
+	}
 }
 function view() {
-    return {
-        w: document.documentElement.clientWidth,
-        h: document.documentElement.clientHeight
-    };
+	return {
+		w: document.documentElement.clientWidth,
+		h: document.documentElement.clientHeight
+	};
 }
-function addClass(obj, sClass) { 
-    var aClass = obj.className.split(' ');
-    if (!obj.className) {
-        obj.className = sClass;
-        return;
-    }
-    for (var i = 0; i < aClass.length; i++) {
-        if (aClass[i] === sClass) return;
-    }
-    obj.className += ' ' + sClass;
+function addClass(obj, sClass) {
+	var aClass = obj.className.split(' ');
+	if (!obj.className) {
+		obj.className = sClass;
+		return;
+	}
+	for (var i = 0; i < aClass.length; i++) {
+		if (aClass[i] === sClass) return;
+	}
+	obj.className += ' ' + sClass;
 }
 
-function removeClass(obj, sClass) { 
-    var aClass = obj.className.split(' ');
-    if (!obj.className) return;
-    for (var i = 0; i < aClass.length; i++) {
-        if (aClass[i] === sClass) {
-            aClass.splice(i, 1);
-            obj.className = aClass.join(' ');
-            break;
-        }
-    }
+function removeClass(obj, sClass) {
+	var aClass = obj.className.split(' ');
+	if (!obj.className) return;
+	for (var i = 0; i < aClass.length; i++) {
+		if (aClass[i] === sClass) {
+			aClass.splice(i, 1);
+			obj.className = aClass.join(' ');
+			break;
+		}
+	}
 }
 
 function fnLoad()
@@ -55,7 +55,7 @@ function fnLoad()
 		if(new Date().getTime()-iTime>=5000)
 		{
 			bTime=true;
-		}	
+		}
 		if(bImgLoad&&bTime)
 		{
 			clearInterval(oTimer);
@@ -68,15 +68,15 @@ function fnLoad()
 		fnTab();
 	}
 	/*for(var i=0;i<arr.length;i++)
-	{
-		var oImg=new Image();
-		oImg.src=arr[i];
-		oImg.onload=function()
-		{
-			
-		}
-		
-	}*/
+	 {
+	 var oImg=new Image();
+	 oImg.src=arr[i];
+	 oImg.onload=function()
+	 {
+
+	 }
+
+	 }*/
 }
 
 function fnTab()
@@ -102,7 +102,7 @@ function fnTab()
 	function auto()
 	{
 		oTimer=setInterval(function(){
-			iNow++;	
+			iNow++;
 			iNow=iNow%aNav.length;
 			tab();
 		},2000);
@@ -171,7 +171,7 @@ function fnScore()
 					if(i<=this.index)
 					{
 						addClass(aNav[i],"active");
-					}					
+					}
 					else
 					{
 						removeClass(aNav[i],"active");
@@ -208,11 +208,11 @@ function fnIndex()
 		{
 			if(bTag())
 			{
-				fnIndexOut();		
+				fnIndexOut();
 			}
 			else
 			{
-				fnInfo(oInfo,"给景区添加标签");	
+				fnInfo(oInfo,"给景区添加标签");
 			}
 		}
 		else
@@ -254,15 +254,15 @@ function fnIndexOut()
 	var oNew=id("news");
 	addClass(oMask,"pageShow");
 	addClass(oNew,"pageShow");
-		fnNews();
+	fnNews();
 	setTimeout(function(){
-		oMask.style.opacity=1;	
+		oMask.style.opacity=1;
 		oIndex.style.WebkitFilter=oIndex.style.filter="blur(5px)";
 	},14);
 	setTimeout(function(){
 		oNew.style.transition="0.5s";
-		oMask.style.opacity=0;	
-		oIndex.style.WebkitFilter=oIndex.style.filter="blur(0px)";	
+		oMask.style.opacity=0;
+		oIndex.style.WebkitFilter=oIndex.style.filter="blur(0px)";
 		oNew.style.opacity=1;
 		removeClass(oMask,"pageShow");
 	},3000);
@@ -304,7 +304,7 @@ function fnNewsOut()
 	addClass(oForm,"pageShow");
 	oNews.style.cssText="";
 	removeClass(oNews,"pageShow");
-		formIn();
+	formIn();
 }
 function formIn()
 {
@@ -344,108 +344,3 @@ function over()
 		removeClass(oOver,"pageShow");
 	});
 }
-
-
-
-
-
-while  for
-
-
-
-	function unique(arr,begin){
-		var left = begin;
-		var right = arr.length-1;
-		if(left>=right){
-			return;
-		}
-
-		while(left<right){
-			if(arr[left] == arr[right]){
-				arr.splice(right,1);
-				right--;
-			}else{
-				right--;
-			}
-		}
-		unique(arr,left+1);
-		return arr;
-	}
-
-
-
-
-	2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-
-
-初始值  终止条件  变化量
-
-Array.prototype.distinct = function() {
-
-	var ret = [];
-
-	for (var i = 0; i < this.length; i++)   基准 谁认识你
-	{
-		for (var j = i+1; j < this.length;) {
-
-		                                   变动家
-
-			if (this[i] === this[j]) {   杀头条件
-
-				ret.push(this.splice(j, 1)[0]); 删除户口 记录器
-
- 			else {  下一家
-				j++;
-			}
-
-		}
-	}
-
-	return ret;  记录器
-}
-//for test
-alert(['a','b','c','d','b','a','e'].distinct());
-
-
-
-
-
-
-
-
-	var quickSort = function(arr) {
-		if (arr.length <= 1) { return arr; }
-		var pivotIndex = Math.floor(arr.length / 2);
-		var pivot = arr.splice(pivotIndex, 1)[0];
-		var left = [];
-		var right = [];
-		for (var i = 0; i < arr.length; i++){
-			if (arr[i] < pivot) {
-				left.push(arr[i]);
-			} else {
-				right.push(arr[i]);
-			}
-		}
-		return quickSort(left).concat([pivot], quickSort(right));
-	};
-
-
-
-
-
-
-
