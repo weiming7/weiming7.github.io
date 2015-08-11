@@ -344,3 +344,108 @@ function over()
 		removeClass(oOver,"pageShow");
 	});
 }
+
+
+
+
+
+while  for
+
+
+
+	function unique(arr,begin){
+		var left = begin;
+		var right = arr.length-1;
+		if(left>=right){
+			return;
+		}
+
+		while(left<right){
+			if(arr[left] == arr[right]){
+				arr.splice(right,1);
+				right--;
+			}else{
+				right--;
+			}
+		}
+		unique(arr,left+1);
+		return arr;
+	}
+
+
+
+
+	2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+
+
+初始值  终止条件  变化量
+
+Array.prototype.distinct = function() {
+
+	var ret = [];
+
+	for (var i = 0; i < this.length; i++)   基准 谁认识你
+	{
+		for (var j = i+1; j < this.length;) {
+
+		                                   变动家
+
+			if (this[i] === this[j]) {   杀头条件
+
+				ret.push(this.splice(j, 1)[0]); 删除户口 记录器
+
+ 			else {  下一家
+				j++;
+			}
+
+		}
+	}
+
+	return ret;  记录器
+}
+//for test
+alert(['a','b','c','d','b','a','e'].distinct());
+
+
+
+
+
+
+
+
+	var quickSort = function(arr) {
+		if (arr.length <= 1) { return arr; }
+		var pivotIndex = Math.floor(arr.length / 2);
+		var pivot = arr.splice(pivotIndex, 1)[0];
+		var left = [];
+		var right = [];
+		for (var i = 0; i < arr.length; i++){
+			if (arr[i] < pivot) {
+				left.push(arr[i]);
+			} else {
+				right.push(arr[i]);
+			}
+		}
+		return quickSort(left).concat([pivot], quickSort(right));
+	};
+
+
+
+
+
+
+
